@@ -7,7 +7,7 @@ public class App {
     public void start(int port) {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             // UPDATED LINE BELOW
-            System.out.println("Socket Server is now running and listening on port: " + port);
+            System.out.println("Socket Server is now running and listening on ports: " + port);
             
             while (true) {
                 try (Socket socket = serverSocket.accept();
@@ -20,6 +20,8 @@ public class App {
                     } else {
                         out.println("unknown");
                     }
+
+                    
                 }
             }
         } catch (IOException e) {
