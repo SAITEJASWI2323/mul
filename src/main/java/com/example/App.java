@@ -6,7 +6,9 @@ import java.net.*;
 public class App {
     public void start(int port) {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
-            System.out.println("Server listening on port " + port);
+            // UPDATED LINE BELOW
+            System.out.println("Socket Server is now running and listening on port: " + port);
+            
             while (true) {
                 try (Socket socket = serverSocket.accept();
                      BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
